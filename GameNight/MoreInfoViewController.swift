@@ -25,6 +25,12 @@ class MoreInfoViewController: UIViewController {
         }
     }
     
+    var firebaseGame: FirebaseGame? {
+        didSet {
+            updateViews1()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +41,42 @@ class MoreInfoViewController: UIViewController {
     
     @objc func dismissView() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func updateViews1() {
+        guard let game = firebaseGame else { return }
+        loadViewIfNeeded()
+        moreInfoForGameLabel.text = "More info for: \(game.gameName)"
+        if let year = game.yearPublished {
+            yearPublishedLabel.text = "\(year)"
+        } else {
+            yearPublishedLabel.text = "N/A"
+        }
+        if let minPlayer = game.minPlayers {
+            minPlayerLabel.text = "\(minPlayer) players"
+        } else {
+            minPlayerLabel.text = "N/A"
+        }
+        if let maxPlayer = game.maxPlayers {
+            maxPlayerLabel.text = "\(maxPlayer) players"
+        } else {
+            maxPlayerLabel.text = "N/A"
+        }
+        if let minPlaytime = game.minPlaytime {
+            minPlaytimeLabel.text = "\(minPlaytime) min."
+        } else {
+            minPlaytimeLabel.text = "N/A"
+        }
+        if let maxPlaytime = game.maxPlaytime {
+            maxPlaytimeLabel.text = "\(maxPlaytime) min."
+        } else {
+            maxPlaytimeLabel.text = "N/A"
+        }
+        if let minAge = game.minAge {
+            minAgeLabel.text = "\(minAge)"
+        } else {
+            minAgeLabel.text = "N/A"
+        }
     }
     
     func updateViews() {

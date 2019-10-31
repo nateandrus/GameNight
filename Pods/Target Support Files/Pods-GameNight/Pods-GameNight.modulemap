@@ -1,0 +1,6 @@
+framework module Pods_GameNight {
+  umbrella header "Pods-GameNight-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -25,6 +25,11 @@ class GameDetailViewController: UIViewController {
             updateViews()
         }
     }
+    
+    var firebaseGameLanding: FirebaseGame? {
+        didSet {
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +42,14 @@ class GameDetailViewController: UIViewController {
     @IBAction func ownGameButtonTapped(_ sender: UIButton) {
         ownGameAlertController()
     }
-    
     @IBAction func addToWishListButtonTapped(_ sender: UIButton) {
         addToWishListAlertController()
     }
-    
     @IBAction func moreInfoButtonTapped(_ sender: UIButton) {
         guard let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "moreInfoVC") as? MoreInfoViewController, let game = gameLanding else { return }
         destinationVC.gameLanding = game
         self.present(destinationVC, animated: false)
     }
-    
     @IBAction func gameRulesButtonTapped(_ sender: UIBarButtonItem) {
         guard let game = gameLanding else { return }
         if game.rules_url != nil {
@@ -66,7 +68,7 @@ class GameDetailViewController: UIViewController {
         imageActivityIndicator.startAnimating()
         nameLabel.text = game.name
         ratingLabel.text = "\((game.average_user_rating)?.rounded(toPlaces: 2) ?? 0)/5"
-        descriptionTextView.text = game.description
+        descriptionTextView.text = GameController.shared.createNewDescription(game.description ?? "No Description Available")
         costLabel.text = "$" + (game.msrp ?? "N/A")
         if let imageURL = game.thumb_url {
             GameController.shared.fetchImageFor(gameImageURL: imageURL) { (image) in
@@ -83,13 +85,30 @@ class GameDetailViewController: UIViewController {
 }
 
 
+
 extension GameDetailViewController {
     
     func addToWishListAlertController() {
         let alertController = UIAlertController(title: "Add to wishlist?", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let addAction = UIAlertAction(title: "Add", style: .default) { (_) in
-            
+            guard let game = self.gameLanding, let userUUID = UserController.shared.currentUser?.uuid else { return }
+            FirebaseGameController.shared.checkToSeeIfGameExists(gameID: game.id) { (success) in
+                if success {
+                    FirebaseGameController.shared.addUserToWishListArray(userUUID: userUUID, gameID: game.id) { (success) in
+                        if success {
+                            print("SUCCESS ADDING TO WISH LIST")
+                        }
+                    }
+                } else {
+                    let firebaseGame = FirebaseGame(uuid: game.id, gameName: game.name, yearPublished: game.year_published, minPlayers: game.min_players, maxPlayers: game.max_players, minAge: game.min_age, minPlaytime: game.min_playtime, maxPlaytime: game.max_playtime, description: game.description, imageURL: game.thumb_url, msrp: game.msrp, averageRating: game.average_user_rating, rulesURL: game.rules_url, wishListUsers: [userUUID], ownUsers: [])
+                    FirebaseGameController.shared.saveGame(game: firebaseGame) { (success) in
+                        if success {
+                            print("Success saving game to firebase")
+                        }
+                    }
+                }
+            }
         }
         alertController.addAction(cancelAction)
         alertController.addAction(addAction)
@@ -100,7 +119,24 @@ extension GameDetailViewController {
         let alertController = UIAlertController(title: "Do you own this game?", message: "If you own this game and add it to your owned game list then you will be able to select this game for your next game night!", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let ownAction = UIAlertAction(title: "Yes, I own it", style: .default) { (_) in
+            guard let game = self.gameLanding, let userUUID = UserController.shared.currentUser?.uuid else { return }
             
+            FirebaseGameController.shared.checkToSeeIfGameExists(gameID: game.id) { (success) in
+                if success {
+                    FirebaseGameController.shared.addUserToOwnGameArray(userUUID: userUUID, gameID: game.id) { (success) in
+                        if success {
+                            print("USER ADDED TO GAME")
+                        }
+                    }
+                } else {
+                    let firebaseGame = FirebaseGame(uuid: game.id, gameName: game.name, yearPublished: game.year_published, minPlayers: game.min_players, maxPlayers: game.max_players, minAge: game.min_age, minPlaytime: game.min_playtime, maxPlaytime: game.max_playtime, description: game.description, imageURL: game.thumb_url, msrp: game.msrp, averageRating: game.average_user_rating, rulesURL: game.rules_url, wishListUsers: [], ownUsers: [userUUID])
+                    FirebaseGameController.shared.saveGame(game: firebaseGame) { (success) in
+                        if success {
+                            print("Success saving game to firebase")
+                        }
+                    }
+                }
+            }
         }
         alertController.addAction(cancelAction)
         alertController.addAction(ownAction)

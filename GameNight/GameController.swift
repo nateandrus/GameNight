@@ -92,8 +92,11 @@ class GameController {
         }.resume()
     }
     
+    func createNewDescription(_ oldDescription: String) -> String {
+        let returnString = oldDescription.replacingOccurrences(of: "<i>", with: "").replacingOccurrences(of: "</i>", with: "").replacingOccurrences(of: "<br />", with: "").replacingOccurrences(of: "<em>", with: "").replacingOccurrences(of: "</em>", with: "").replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: "").replacingOccurrences(of: "<strong>", with: "").replacingOccurrences(of: "</strong>", with: "").replacingOccurrences(of: "<ul>", with: "").replacingOccurrences(of: "<li>", with: "").replacingOccurrences(of: "</li>", with: "").replacingOccurrences(of: "</ul>", with: "")
+        return returnString
+    }
 }
-
 
 extension Double {
     func rounded(toPlaces places:Int) -> Double {

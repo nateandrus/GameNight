@@ -60,7 +60,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = self.tableView.frame.height / 9
+        let height = self.view.frame.height / 9
         return height 
     }
     

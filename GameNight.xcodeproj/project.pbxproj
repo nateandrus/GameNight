@@ -7,12 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A60C51A41DC1AEC715297858 /* Pods_GameNight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A8660FD768FF2132B574D2 /* Pods_GameNight.framework */; };
 		ED059494235F9B4000C53C1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED059493235F9B4000C53C1F /* AppDelegate.swift */; };
 		ED059496235F9B4000C53C1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED059495235F9B4000C53C1F /* SceneDelegate.swift */; };
 		ED05949B235F9B4000C53C1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED059499235F9B4000C53C1F /* Main.storyboard */; };
 		ED05949D235F9B4200C53C1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED05949C235F9B4200C53C1F /* Assets.xcassets */; };
 		ED0594A0235F9B4200C53C1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED05949E235F9B4200C53C1F /* LaunchScreen.storyboard */; };
 		ED0594A8235F9B6400C53C1F /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0594A7235F9B6400C53C1F /* GameController.swift */; };
+		ED0DBE4D2368B00B00AFA952 /* OwnedGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE4B2368B00B00AFA952 /* OwnedGameTableViewCell.swift */; };
+		ED0DBE4E2368B00B00AFA952 /* OwnedGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0DBE4C2368B00B00AFA952 /* OwnedGameTableViewCell.xib */; };
+		ED0DBE502368D46900AFA952 /* OwnGameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE4F2368D46900AFA952 /* OwnGameDetailViewController.swift */; };
+		ED0DBE522368D47600AFA952 /* WishListGameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE512368D47600AFA952 /* WishListGameDetailViewController.swift */; };
+		ED0DBE542369E24B00AFA952 /* FilteredGameListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE532369E24B00AFA952 /* FilteredGameListTableViewController.swift */; };
+		ED0DBE562369ED9700AFA952 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE552369ED9600AFA952 /* Note.swift */; };
+		ED0DBE582369F17500AFA952 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE572369F17500AFA952 /* NoteController.swift */; };
+		ED0DBE5A2369F48000AFA952 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE592369F48000AFA952 /* NotesTableViewController.swift */; };
+		ED0DBE5C2369F61E00AFA952 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE5B2369F61E00AFA952 /* DateExtension.swift */; };
+		ED0DBE5E2369FD7700AFA952 /* NPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE5D2369FD7700AFA952 /* NPTextField.swift */; };
+		ED0DBE602369FD8000AFA952 /* NPTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE5F2369FD8000AFA952 /* NPTextView.swift */; };
+		ED0DBE622369FE5B00AFA952 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE612369FE5B00AFA952 /* AddNoteViewController.swift */; };
+		ED0DBE64236A4CBD00AFA952 /* PhotoResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0DBE63236A4CBD00AFA952 /* PhotoResizer.swift */; };
 		ED4AD2D7235FB668008129D7 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2D6235FB668008129D7 /* HomeTableViewController.swift */; };
 		ED4AD2DD235FB783008129D7 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2DB235FB783008129D7 /* GameTableViewCell.swift */; };
 		ED4AD2DE235FB783008129D7 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4AD2DC235FB783008129D7 /* GameTableViewCell.xib */; };
@@ -22,11 +36,20 @@
 		ED4AD2E62360FD7B008129D7 /* ChooseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2E52360FD7B008129D7 /* ChooseGameViewController.swift */; };
 		ED4AD2E82360FD8C008129D7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2E72360FD8C008129D7 /* ProfileViewController.swift */; };
 		ED4AD2EA2361032A008129D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2E92361032A008129D7 /* User.swift */; };
+		ED4AD2EC236106DF008129D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED4AD2EB236106DF008129D7 /* GoogleService-Info.plist */; };
+		ED4AD2EE23610D22008129D7 /* FirebaseGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2ED23610D22008129D7 /* FirebaseGame.swift */; };
+		ED4AD2F22361F582008129D7 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2F12361F582008129D7 /* UserController.swift */; };
+		ED4AD2F42361F58D008129D7 /* FirebaseGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2F32361F58D008129D7 /* FirebaseGameController.swift */; };
+		ED4AD2F62361F950008129D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2F52361F950008129D7 /* LoginViewController.swift */; };
+		ED4AD2F82361FCDD008129D7 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2F72361FCDD008129D7 /* CreateUsernameViewController.swift */; };
 		ED8AF635235F9EFE00E352B5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AF634235F9EFE00E352B5 /* Game.swift */; };
-		ED8AF637235FA3AE00E352B5 /* MainGameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AF636235FA3AE00E352B5 /* MainGameTableViewController.swift */; };
+		ED8AF637235FA3AE00E352B5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AF636235FA3AE00E352B5 /* SearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A8660FD768FF2132B574D2 /* Pods_GameNight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameNight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DF9AFE62ECDFDB32C39880C /* Pods-GameNight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameNight.debug.xcconfig"; path = "Target Support Files/Pods-GameNight/Pods-GameNight.debug.xcconfig"; sourceTree = "<group>"; };
+		D208288B6A65005A2B613594 /* Pods-GameNight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameNight.release.xcconfig"; path = "Target Support Files/Pods-GameNight/Pods-GameNight.release.xcconfig"; sourceTree = "<group>"; };
 		ED059490235F9B4000C53C1F /* GameNight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameNight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED059493235F9B4000C53C1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED059495235F9B4000C53C1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +58,19 @@
 		ED05949F235F9B4200C53C1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED0594A1235F9B4200C53C1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED0594A7235F9B6400C53C1F /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		ED0DBE4B2368B00B00AFA952 /* OwnedGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedGameTableViewCell.swift; sourceTree = "<group>"; };
+		ED0DBE4C2368B00B00AFA952 /* OwnedGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OwnedGameTableViewCell.xib; sourceTree = "<group>"; };
+		ED0DBE4F2368D46900AFA952 /* OwnGameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnGameDetailViewController.swift; sourceTree = "<group>"; };
+		ED0DBE512368D47600AFA952 /* WishListGameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListGameDetailViewController.swift; sourceTree = "<group>"; };
+		ED0DBE532369E24B00AFA952 /* FilteredGameListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredGameListTableViewController.swift; sourceTree = "<group>"; };
+		ED0DBE552369ED9600AFA952 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		ED0DBE572369F17500AFA952 /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
+		ED0DBE592369F48000AFA952 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		ED0DBE5B2369F61E00AFA952 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		ED0DBE5D2369FD7700AFA952 /* NPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPTextField.swift; sourceTree = "<group>"; };
+		ED0DBE5F2369FD8000AFA952 /* NPTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPTextView.swift; sourceTree = "<group>"; };
+		ED0DBE612369FE5B00AFA952 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		ED0DBE63236A4CBD00AFA952 /* PhotoResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResizer.swift; sourceTree = "<group>"; };
 		ED4AD2D6235FB668008129D7 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		ED4AD2DB235FB783008129D7 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		ED4AD2DC235FB783008129D7 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
@@ -44,8 +80,14 @@
 		ED4AD2E52360FD7B008129D7 /* ChooseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameViewController.swift; sourceTree = "<group>"; };
 		ED4AD2E72360FD8C008129D7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ED4AD2E92361032A008129D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ED4AD2EB236106DF008129D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED4AD2ED23610D22008129D7 /* FirebaseGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGame.swift; sourceTree = "<group>"; };
+		ED4AD2F12361F582008129D7 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		ED4AD2F32361F58D008129D7 /* FirebaseGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGameController.swift; sourceTree = "<group>"; };
+		ED4AD2F52361F950008129D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ED4AD2F72361FCDD008129D7 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		ED8AF634235F9EFE00E352B5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		ED8AF636235FA3AE00E352B5 /* MainGameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameTableViewController.swift; sourceTree = "<group>"; };
+		ED8AF636235FA3AE00E352B5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +95,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60C51A41DC1AEC715297858 /* Pods_GameNight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		802134D60E3E2CCF466C34B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DF9AFE62ECDFDB32C39880C /* Pods-GameNight.debug.xcconfig */,
+				D208288B6A65005A2B613594 /* Pods-GameNight.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED059487235F9B4000C53C1F = {
 			isa = PBXGroup;
 			children = (
 				ED059492235F9B4000C53C1F /* GameNight */,
 				ED059491235F9B4000C53C1F /* Products */,
+				802134D60E3E2CCF466C34B2 /* Pods */,
+				ED377366F69C2E1973B2CC3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +140,14 @@
 			path = GameNight;
 			sourceTree = "<group>";
 		};
+		ED377366F69C2E1973B2CC3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01A8660FD768FF2132B574D2 /* Pods_GameNight.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED4AD2CC235FACFC008129D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +155,11 @@
 				ED059495235F9B4000C53C1F /* SceneDelegate.swift */,
 				ED05949C235F9B4200C53C1F /* Assets.xcassets */,
 				ED0594A1235F9B4200C53C1F /* Info.plist */,
+				ED4AD2EB236106DF008129D7 /* GoogleService-Info.plist */,
+				ED0DBE5B2369F61E00AFA952 /* DateExtension.swift */,
+				ED0DBE5D2369FD7700AFA952 /* NPTextField.swift */,
+				ED0DBE5F2369FD8000AFA952 /* NPTextView.swift */,
+				ED0DBE63236A4CBD00AFA952 /* PhotoResizer.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -111,6 +178,8 @@
 			children = (
 				ED8AF634235F9EFE00E352B5 /* Game.swift */,
 				ED4AD2E92361032A008129D7 /* User.swift */,
+				ED4AD2ED23610D22008129D7 /* FirebaseGame.swift */,
+				ED0DBE552369ED9600AFA952 /* Note.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -128,6 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				ED0594A7235F9B6400C53C1F /* GameController.swift */,
+				ED4AD2F12361F582008129D7 /* UserController.swift */,
+				ED4AD2F32361F58D008129D7 /* FirebaseGameController.swift */,
+				ED0DBE572369F17500AFA952 /* NoteController.swift */,
 			);
 			name = ModelControllers;
 			sourceTree = "<group>";
@@ -136,13 +208,20 @@
 			isa = PBXGroup;
 			children = (
 				ED4AD2D8235FB760008129D7 /* CustomViews */,
+				ED4AD2F52361F950008129D7 /* LoginViewController.swift */,
+				ED4AD2F72361FCDD008129D7 /* CreateUsernameViewController.swift */,
 				ED4AD2D6235FB668008129D7 /* HomeTableViewController.swift */,
 				ED4AD2DF235FBDB2008129D7 /* GameDetailViewController.swift */,
 				ED4AD2E12360B78B008129D7 /* GameRulesViewController.swift */,
 				ED4AD2E32360F2A5008129D7 /* MoreInfoViewController.swift */,
-				ED8AF636235FA3AE00E352B5 /* MainGameTableViewController.swift */,
+				ED8AF636235FA3AE00E352B5 /* SearchTableViewController.swift */,
 				ED4AD2E52360FD7B008129D7 /* ChooseGameViewController.swift */,
+				ED0DBE532369E24B00AFA952 /* FilteredGameListTableViewController.swift */,
 				ED4AD2E72360FD8C008129D7 /* ProfileViewController.swift */,
+				ED0DBE4F2368D46900AFA952 /* OwnGameDetailViewController.swift */,
+				ED0DBE512368D47600AFA952 /* WishListGameDetailViewController.swift */,
+				ED0DBE592369F48000AFA952 /* NotesTableViewController.swift */,
+				ED0DBE612369FE5B00AFA952 /* AddNoteViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +231,8 @@
 			children = (
 				ED4AD2DB235FB783008129D7 /* GameTableViewCell.swift */,
 				ED4AD2DC235FB783008129D7 /* GameTableViewCell.xib */,
+				ED0DBE4B2368B00B00AFA952 /* OwnedGameTableViewCell.swift */,
+				ED0DBE4C2368B00B00AFA952 /* OwnedGameTableViewCell.xib */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -163,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED0594A4235F9B4200C53C1F /* Build configuration list for PBXNativeTarget "GameNight" */;
 			buildPhases = (
+				D53AB461167FF43A51B21636 /* [CP] Check Pods Manifest.lock */,
 				ED05948C235F9B4000C53C1F /* Sources */,
 				ED05948D235F9B4000C53C1F /* Frameworks */,
 				ED05948E235F9B4000C53C1F /* Resources */,
+				ABB85F2ACDA5A64A9A0198BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,6 +299,8 @@
 			files = (
 				ED0594A0235F9B4200C53C1F /* LaunchScreen.storyboard in Resources */,
 				ED05949D235F9B4200C53C1F /* Assets.xcassets in Resources */,
+				ED4AD2EC236106DF008129D7 /* GoogleService-Info.plist in Resources */,
+				ED0DBE4E2368B00B00AFA952 /* OwnedGameTableViewCell.xib in Resources */,
 				ED05949B235F9B4000C53C1F /* Main.storyboard in Resources */,
 				ED4AD2DE235FB783008129D7 /* GameTableViewCell.xib in Resources */,
 			);
@@ -223,22 +308,100 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ABB85F2ACDA5A64A9A0198BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GameNight/Pods-GameNight-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GameNight/Pods-GameNight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D53AB461167FF43A51B21636 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameNight-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED05948C235F9B4000C53C1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ED4AD2EA2361032A008129D7 /* User.swift in Sources */,
+				ED0DBE582369F17500AFA952 /* NoteController.swift in Sources */,
 				ED4AD2DD235FB783008129D7 /* GameTableViewCell.swift in Sources */,
-				ED8AF637235FA3AE00E352B5 /* MainGameTableViewController.swift in Sources */,
+				ED0DBE562369ED9700AFA952 /* Note.swift in Sources */,
+				ED8AF637235FA3AE00E352B5 /* SearchTableViewController.swift in Sources */,
+				ED0DBE5C2369F61E00AFA952 /* DateExtension.swift in Sources */,
 				ED8AF635235F9EFE00E352B5 /* Game.swift in Sources */,
+				ED0DBE542369E24B00AFA952 /* FilteredGameListTableViewController.swift in Sources */,
 				ED4AD2E22360B78B008129D7 /* GameRulesViewController.swift in Sources */,
+				ED0DBE602369FD8000AFA952 /* NPTextView.swift in Sources */,
 				ED0594A8235F9B6400C53C1F /* GameController.swift in Sources */,
+				ED4AD2F42361F58D008129D7 /* FirebaseGameController.swift in Sources */,
 				ED059494235F9B4000C53C1F /* AppDelegate.swift in Sources */,
+				ED0DBE502368D46900AFA952 /* OwnGameDetailViewController.swift in Sources */,
+				ED4AD2F82361FCDD008129D7 /* CreateUsernameViewController.swift in Sources */,
 				ED4AD2E82360FD8C008129D7 /* ProfileViewController.swift in Sources */,
 				ED4AD2E0235FBDB2008129D7 /* GameDetailViewController.swift in Sources */,
+				ED0DBE622369FE5B00AFA952 /* AddNoteViewController.swift in Sources */,
 				ED4AD2E62360FD7B008129D7 /* ChooseGameViewController.swift in Sources */,
+				ED0DBE64236A4CBD00AFA952 /* PhotoResizer.swift in Sources */,
+				ED4AD2EE23610D22008129D7 /* FirebaseGame.swift in Sources */,
+				ED0DBE522368D47600AFA952 /* WishListGameDetailViewController.swift in Sources */,
 				ED4AD2E42360F2A5008129D7 /* MoreInfoViewController.swift in Sources */,
+				ED0DBE5A2369F48000AFA952 /* NotesTableViewController.swift in Sources */,
+				ED0DBE4D2368B00B00AFA952 /* OwnedGameTableViewCell.swift in Sources */,
+				ED0DBE5E2369FD7700AFA952 /* NPTextField.swift in Sources */,
+				ED4AD2F62361F950008129D7 /* LoginViewController.swift in Sources */,
+				ED4AD2F22361F582008129D7 /* UserController.swift in Sources */,
 				ED4AD2D7235FB668008129D7 /* HomeTableViewController.swift in Sources */,
 				ED059496235F9B4000C53C1F /* SceneDelegate.swift in Sources */,
 			);
@@ -382,6 +545,7 @@
 		};
 		ED0594A5235F9B4200C53C1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DF9AFE62ECDFDB32C39880C /* Pods-GameNight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -400,6 +564,7 @@
 		};
 		ED0594A6235F9B4200C53C1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D208288B6A65005A2B613594 /* Pods-GameNight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
