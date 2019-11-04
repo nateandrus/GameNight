@@ -46,6 +46,9 @@ class ChooseGameViewController: UIViewController {
         numberOfPlayersMinStepper.value = 4
         numberOfPlayersMinStepper.maximumValue = 12
         numberOfPlayersMinStepper.minimumValue = 1
+        let games = FirebaseGameController.shared.findRandomGame(numberOfPlayers: numberOfPlayers, playtime: playtime, minAge: minAge)
+        self.filteredGames = games
+        seeListButton.setTitle("See games (\(games.count))", for: .normal)
     }
     
     @IBAction func chooseRandomButtonTapped(_ sender: UIButton) {
@@ -63,6 +66,9 @@ class ChooseGameViewController: UIViewController {
                             self.questionMarkLabel.isHidden = true
                             self.gameImageView.image = image
                             self.gameImageView.backgroundColor = .white
+                            let fadedAnimation = self.fadeAnimation(startingPoint: 0, endingPoint: 1, duration: 1.5)
+                            self.gameImageView.layer.add(fadedAnimation, forKey: "opacity")
+                            self.gameImageView.layer.opacity = 1
                         }
                     }
                 }
@@ -76,20 +82,62 @@ class ChooseGameViewController: UIViewController {
         }
     }
     @IBAction func seeListOfGamesButtonTapped(_ sender: UIButton) {
-        guard let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "filteredGameTVC") as? FilteredGameListTableViewController else { return }
+        guard let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "filteredGameTVC") as? FilteredGameListTableViewController,
+            filteredGames.count > 0
+            else { presentNoGamesAlert();  return }
         destinationVC.games = filteredGames
         present(destinationVC, animated: true)
     }
     @IBAction func numberOfPlayersMinStepperTapped(_ sender: UIStepper) {
         numberOfPlayersLabel.text = "\(Int(sender.value))"
         numberOfPlayers = Int(sender.value)
+        let games = FirebaseGameController.shared.findRandomGame(numberOfPlayers: numberOfPlayers, playtime: playtime, minAge: minAge)
+        self.filteredGames = games
+        seeListButton.setTitle("See games (\(games.count))", for: .normal)
     }
     @IBAction func playtimeMinStepperTapped(_ sender: UIStepper) {
         playtimeLabel.text = "\(Int(sender.value))"
         playtime = Int(sender.value)
+        let games = FirebaseGameController.shared.findRandomGame(numberOfPlayers: numberOfPlayers, playtime: playtime, minAge: minAge)
+        self.filteredGames = games
+        seeListButton.setTitle("See games (\(games.count))", for: .normal)
     }
     @IBAction func minAgeStepperTapped(_ sender: UIStepper) {
-        minAgeLabel.text = "\(Int(sender.value))"
+        if sender.value == 21 {
+            minAgeLabel.text = "\(Int(sender.value))+"
+        } else {
+            minAgeLabel.text = "\(Int(sender.value))"
+        }
         minAge = Int(sender.value)
+        let games = FirebaseGameController.shared.findRandomGame(numberOfPlayers: numberOfPlayers, playtime: playtime, minAge: minAge)
+        self.filteredGames = games
+        seeListButton.setTitle("See games (\(games.count))", for: .normal)
+    }
+    
+    func presentNoGamesAlert() {
+        let alert = UIAlertController(title: "No games...?", message: "Based on your filter preferences you have no games that match that criteria. Try to switch preferences!", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default)
+        alert.addAction(okayAction)
+        present(alert, animated: true)
+    }
+}
+
+//Animations
+extension ChooseGameViewController {
+    func scaleAnimation(startingScale: CGFloat, endingScale: CGFloat, animationDuration: Double) -> CABasicAnimation {
+        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnimation.fromValue = startingScale
+        scaleAnimation.toValue = endingScale
+        scaleAnimation.duration = animationDuration
+        scaleAnimation.autoreverses = true
+        scaleAnimation.repeatCount = 2
+        return scaleAnimation
+    }
+    func fadeAnimation(startingPoint: CGFloat, endingPoint: CGFloat, duration: Double) -> CABasicAnimation {
+        let fadeAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeAnimation.fromValue = startingPoint
+        fadeAnimation.toValue = endingPoint
+        fadeAnimation.duration = duration
+        return fadeAnimation
     }
 }

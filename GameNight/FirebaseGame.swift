@@ -26,8 +26,9 @@ class FirebaseGame {
     let rulesURL: String?
     let wishListUsers: [String]
     let ownUsers: [String]
+    var gameImage: UIImage?
     
-    init(uuid: String, gameName: String, yearPublished: Int?, minPlayers: Int?, maxPlayers: Int?, minAge: Int?, minPlaytime: Int?, maxPlaytime: Int?, description: String?, imageURL: String?, msrp: String?, averageRating: Double?, rulesURL: String?, wishListUsers: [String], ownUsers: [String]) {
+    init(uuid: String, gameName: String, yearPublished: Int?, minPlayers: Int?, maxPlayers: Int?, minAge: Int?, minPlaytime: Int?, maxPlaytime: Int?, description: String?, imageURL: String?, msrp: String?, averageRating: Double?, rulesURL: String?, wishListUsers: [String], ownUsers: [String], gameImage: UIImage?) {
         self.uuid = uuid
         self.gameName = gameName
         self.yearPublished = yearPublished
@@ -43,6 +44,7 @@ class FirebaseGame {
         self.rulesURL = rulesURL
         self.wishListUsers = wishListUsers
         self.ownUsers = ownUsers
+        self.gameImage = gameImage
     }
     
     var dictionary: [String: Any] {
@@ -84,6 +86,6 @@ extension FirebaseGame {
         let averageRating = dictionary["averageRating"] as? Double
         let rulesURL = dictionary["rulesURL"] as? String
 
-        self.init(uuid: uuid, gameName: gameName, yearPublished: yearPublished, minPlayers: minPlayers, maxPlayers: maxPlayers, minAge: minAge, minPlaytime: minPlaytime, maxPlaytime: maxPlaytime, description: description, imageURL: imageURL, msrp: msrp, averageRating: averageRating, rulesURL: rulesURL, wishListUsers: [], ownUsers: [])
+        self.init(uuid: uuid, gameName: gameName, yearPublished: yearPublished, minPlayers: minPlayers, maxPlayers: maxPlayers, minAge: minAge, minPlaytime: minPlaytime, maxPlaytime: maxPlaytime, description: description, imageURL: imageURL, msrp: msrp, averageRating: averageRating, rulesURL: rulesURL, wishListUsers: [], ownUsers: [], gameImage: nil)
     }
 }

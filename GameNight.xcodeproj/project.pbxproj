@@ -42,6 +42,8 @@
 		ED4AD2F42361F58D008129D7 /* FirebaseGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2F32361F58D008129D7 /* FirebaseGameController.swift */; };
 		ED4AD2F62361F950008129D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2F52361F950008129D7 /* LoginViewController.swift */; };
 		ED4AD2F82361FCDD008129D7 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AD2F72361FCDD008129D7 /* CreateUsernameViewController.swift */; };
+		ED838A0C236A88DB00E437CE /* NPSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED838A0B236A88DB00E437CE /* NPSearchBar.swift */; };
+		ED838A0E236A922100E437CE /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED838A0D236A922100E437CE /* SplashScreenViewController.swift */; };
 		ED8AF635235F9EFE00E352B5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AF634235F9EFE00E352B5 /* Game.swift */; };
 		ED8AF637235FA3AE00E352B5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AF636235FA3AE00E352B5 /* SearchTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,8 @@
 		ED4AD2F32361F58D008129D7 /* FirebaseGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGameController.swift; sourceTree = "<group>"; };
 		ED4AD2F52361F950008129D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED4AD2F72361FCDD008129D7 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
+		ED838A0B236A88DB00E437CE /* NPSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPSearchBar.swift; sourceTree = "<group>"; };
+		ED838A0D236A922100E437CE /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		ED8AF634235F9EFE00E352B5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		ED8AF636235FA3AE00E352B5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +163,7 @@
 				ED0DBE5B2369F61E00AFA952 /* DateExtension.swift */,
 				ED0DBE5D2369FD7700AFA952 /* NPTextField.swift */,
 				ED0DBE5F2369FD8000AFA952 /* NPTextView.swift */,
+				ED838A0B236A88DB00E437CE /* NPSearchBar.swift */,
 				ED0DBE63236A4CBD00AFA952 /* PhotoResizer.swift */,
 			);
 			name = Resources;
@@ -208,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				ED4AD2D8235FB760008129D7 /* CustomViews */,
+				ED838A0D236A922100E437CE /* SplashScreenViewController.swift */,
 				ED4AD2F52361F950008129D7 /* LoginViewController.swift */,
 				ED4AD2F72361FCDD008129D7 /* CreateUsernameViewController.swift */,
 				ED4AD2D6235FB668008129D7 /* HomeTableViewController.swift */,
@@ -376,6 +382,7 @@
 			files = (
 				ED4AD2EA2361032A008129D7 /* User.swift in Sources */,
 				ED0DBE582369F17500AFA952 /* NoteController.swift in Sources */,
+				ED838A0C236A88DB00E437CE /* NPSearchBar.swift in Sources */,
 				ED4AD2DD235FB783008129D7 /* GameTableViewCell.swift in Sources */,
 				ED0DBE562369ED9700AFA952 /* Note.swift in Sources */,
 				ED8AF637235FA3AE00E352B5 /* SearchTableViewController.swift in Sources */,
@@ -383,6 +390,7 @@
 				ED8AF635235F9EFE00E352B5 /* Game.swift in Sources */,
 				ED0DBE542369E24B00AFA952 /* FilteredGameListTableViewController.swift in Sources */,
 				ED4AD2E22360B78B008129D7 /* GameRulesViewController.swift in Sources */,
+				ED838A0E236A922100E437CE /* SplashScreenViewController.swift in Sources */,
 				ED0DBE602369FD8000AFA952 /* NPTextView.swift in Sources */,
 				ED0594A8235F9B6400C53C1F /* GameController.swift in Sources */,
 				ED4AD2F42361F58D008129D7 /* FirebaseGameController.swift in Sources */,
@@ -558,7 +566,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Andrus.GameNight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -577,7 +585,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Andrus.GameNight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

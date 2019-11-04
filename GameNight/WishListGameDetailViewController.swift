@@ -27,9 +27,17 @@ class WishListGameDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        descriptionTextView.isEditable = false
         ownGameButton.layer.cornerRadius = ownGameButton.frame.height / 2
         removeButton.layer.cornerRadius = removeButton.frame.height / 2
         infoButton.layer.cornerRadius = infoButton.frame.height / 2
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeHandled))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
+    }
+    
+    @objc func rightSwipeHandled() {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func ownGameButtonTapped(_ sender: UIButton) {
@@ -54,7 +62,7 @@ class WishListGameDetailViewController: UIViewController {
         nameLabel.text = game.gameName
         ratingLabel.text = "\(game.averageRating?.rounded(toPlaces: 2) ?? 0)/5"
         costLabel.text = game.msrp
-        descriptionTextView.text = game.description
+        descriptionTextView.text = GameController.shared.createNewDescription(game.description ?? "No Description Available")
         if let imageURL = game.imageURL {
             GameController.shared.fetchImageFor(gameImageURL: imageURL) { (image) in
                 if let image = image {

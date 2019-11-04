@@ -15,6 +15,7 @@ class OwnGameDetailViewController: UIViewController {
     @IBOutlet weak var gameNotesButton: UIButton!
     @IBOutlet weak var gameNameLAbel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var imageActivityIndicator: UIActivityIndicatorView!
     
     var game: FirebaseGame? {
         didSet {
@@ -24,10 +25,19 @@ class OwnGameDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageActivityIndicator.startAnimating()
         descriptionTextView.isEditable = false 
         dontOwnGameButton.layer.cornerRadius = dontOwnGameButton.frame.height / 2
         gameNotesButton.layer.cornerRadius = gameNotesButton.frame.height / 2
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeHandled))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
     }
+    
+    @objc func rightSwipeHandled() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func moreInfoButtonTapped(_ sender: UIBarButtonItem) {
         guard let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "moreInfoVC") as? MoreInfoViewController, let game = game else { return }
         destinationVC.firebaseGame = game
@@ -49,12 +59,22 @@ class OwnGameDetailViewController: UIViewController {
         guard let game = game else { return }
         loadViewIfNeeded()
         gameNameLAbel.text = game.gameName
-        descriptionTextView.text = game.description
-        if let imageURL = game.imageURL {
-            GameController.shared.fetchImageFor(gameImageURL: imageURL) { (image) in
-                if let image = image {
-                    DispatchQueue.main.async {
-                        self.gameImageView.image = image
+        descriptionTextView.text = GameController.shared.createNewDescription(game.description ?? "No Description Available")
+        if let image = game.gameImage {
+            DispatchQueue.main.async {
+                self.gameImageView.image = image
+                self.imageActivityIndicator.stopAnimating()
+                self.imageActivityIndicator.isHidden = true
+            }
+        } else {
+            if let imageURL = game.imageURL {
+                GameController.shared.fetchImageFor(gameImageURL: imageURL) { (image) in
+                    if let image = image {
+                        DispatchQueue.main.async {
+                            self.gameImageView.image = image
+                            self.imageActivityIndicator.stopAnimating()
+                            self.imageActivityIndicator.isHidden = true
+                        }
                     }
                 }
             }

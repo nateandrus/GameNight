@@ -10,10 +10,18 @@ import UIKit
 
 class NotesTableViewController: UITableViewController {
     
+    @IBOutlet var notesLabel: UILabel!
+    
     var gameID: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let y = Double(self.view.frame.height / 2) - 100
+        let width = Double(self.view.frame.width) - 32
+        let height = 50.0
+        notesLabel.frame = CGRect(x: 16, y: y, width: width, height: height)
+        self.view.addSubview(notesLabel)
+        notesLabel.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -21,7 +29,16 @@ class NotesTableViewController: UITableViewController {
         guard let gameID = gameID, let userID = UserController.shared.currentUser?.uuid else { return }
         NoteController.shared.fetchNotesForGame(gameID: gameID, userID: userID) { (success) in
             if success {
-                self.tableView.reloadData()
+                if NoteController.shared.notes.count == 0 {
+                    DispatchQueue.main.async {
+                        self.notesLabel.isHidden = false
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.notesLabel.isHidden = true
+                        self.tableView.reloadData()
+                    }
+                }
             }
         }
     }
@@ -55,6 +72,9 @@ class NotesTableViewController: UITableViewController {
             NoteController.shared.deleteNote(note: note) { (success) in
                 if success {
                     tableView.deleteRows(at: [indexPath], with: .fade)
+                    if NoteController.shared.notes.count == 0 {
+                        self.notesLabel.isHidden = false
+                    }
                 }
             }
         }

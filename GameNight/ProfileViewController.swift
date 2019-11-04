@@ -92,7 +92,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             return FirebaseGameController.shared.usersWishListGames.count
         }
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let height = self.view.frame.height / 9
         return height
@@ -112,7 +111,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(destinationVC, animated: true)
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if gamesSegmentController.selectedSegmentIndex == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ownedGameCell", for: indexPath) as! OwnedGameTableViewCell

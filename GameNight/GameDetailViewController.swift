@@ -37,6 +37,15 @@ class GameDetailViewController: UIViewController {
         ownGameButton.layer.cornerRadius = ownGameButton.frame.height / 2
         addToWishListButton.layer.cornerRadius = addToWishListButton.frame.height / 2
         moreInfoButton.layer.cornerRadius = moreInfoButton.frame.height / 2
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeHandled))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
+        
+    }
+    
+    @objc func rightSwipeHandled() {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func ownGameButtonTapped(_ sender: UIButton) {
@@ -101,7 +110,7 @@ extension GameDetailViewController {
                         }
                     }
                 } else {
-                    let firebaseGame = FirebaseGame(uuid: game.id, gameName: game.name, yearPublished: game.year_published, minPlayers: game.min_players, maxPlayers: game.max_players, minAge: game.min_age, minPlaytime: game.min_playtime, maxPlaytime: game.max_playtime, description: game.description, imageURL: game.thumb_url, msrp: game.msrp, averageRating: game.average_user_rating, rulesURL: game.rules_url, wishListUsers: [userUUID], ownUsers: [])
+                    let firebaseGame = FirebaseGame(uuid: game.id, gameName: game.name, yearPublished: game.year_published, minPlayers: game.min_players, maxPlayers: game.max_players, minAge: game.min_age, minPlaytime: game.min_playtime, maxPlaytime: game.max_playtime, description: game.description, imageURL: game.thumb_url, msrp: game.msrp, averageRating: game.average_user_rating, rulesURL: game.rules_url, wishListUsers: [userUUID], ownUsers: [], gameImage: nil)
                     FirebaseGameController.shared.saveGame(game: firebaseGame) { (success) in
                         if success {
                             print("Success saving game to firebase")
@@ -129,7 +138,7 @@ extension GameDetailViewController {
                         }
                     }
                 } else {
-                    let firebaseGame = FirebaseGame(uuid: game.id, gameName: game.name, yearPublished: game.year_published, minPlayers: game.min_players, maxPlayers: game.max_players, minAge: game.min_age, minPlaytime: game.min_playtime, maxPlaytime: game.max_playtime, description: game.description, imageURL: game.thumb_url, msrp: game.msrp, averageRating: game.average_user_rating, rulesURL: game.rules_url, wishListUsers: [], ownUsers: [userUUID])
+                    let firebaseGame = FirebaseGame(uuid: game.id, gameName: game.name, yearPublished: game.year_published, minPlayers: game.min_players, maxPlayers: game.max_players, minAge: game.min_age, minPlaytime: game.min_playtime, maxPlaytime: game.max_playtime, description: game.description, imageURL: game.thumb_url, msrp: game.msrp, averageRating: game.average_user_rating, rulesURL: game.rules_url, wishListUsers: [], ownUsers: [userUUID], gameImage: nil)
                     FirebaseGameController.shared.saveGame(game: firebaseGame) { (success) in
                         if success {
                             print("Success saving game to firebase")

@@ -15,6 +15,12 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var gameContentView: UIView!
+    @IBOutlet weak var imageActivityIndicator: UIActivityIndicatorView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        imageActivityIndicator.startAnimating()
+    }
     
     var gameLanding: TopLevelDictionary.Game? {
         didSet {
@@ -52,6 +58,8 @@ class GameTableViewCell: UITableViewCell {
                     DispatchQueue.main.async {
                         self.gameImageView.image = image
                         self.gameImageView.backgroundColor = .white
+                        self.imageActivityIndicator.stopAnimating()
+                        self.imageActivityIndicator.isHidden = true
                     }
                 }
             }
@@ -69,6 +77,8 @@ class GameTableViewCell: UITableViewCell {
                     DispatchQueue.main.async {
                         self.gameImageView.image = image
                         self.gameImageView.backgroundColor = .white
+                        self.imageActivityIndicator.stopAnimating()
+                        self.imageActivityIndicator.isHidden = true
                     }
                 }
             }

@@ -19,11 +19,15 @@ class HomeTableViewController: UITableViewController {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         let nib = UINib(nibName: "GameTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "gameCell")
-        
+        guard let user = UserController.shared.currentUser else { return }
         GameController.shared.fetchMostPopularGames { (success) in
             if success {
                 self.setupViews()
             }
+        }
+        FirebaseGameController.shared.fetchUsersWishListGames(userUUID: user.uuid) { (success) in
+        }
+        FirebaseGameController.shared.fetchUsersOwnedGames(userUUID: user.uuid) { (success) in
         }
     }
     

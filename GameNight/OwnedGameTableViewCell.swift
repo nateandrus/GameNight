@@ -10,9 +10,15 @@ import UIKit
 
 class OwnedGameTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imageActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var gameCellView: UIView!
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        imageActivityIndicator.startAnimating()
+    }
     
     var firebaseGameLanding: FirebaseGame? {
         didSet {
@@ -23,12 +29,25 @@ class OwnedGameTableViewCell: UITableViewCell {
     func updateViews() {
         guard let game = firebaseGameLanding else { return }
         gameLabel.text = game.gameName
-        if let imageurl = game.imageURL {
-            GameController.shared.fetchImageFor(gameImageURL: imageurl) { (image) in
-                if let image = image {
-                    DispatchQueue.main.async {
-                        self.gameImageView.image = image
-                        self.gameImageView.backgroundColor = .white
+        if let image = game.gameImage {
+            DispatchQueue.main.async {
+                game.gameImage = image
+                self.gameImageView.image = image
+                self.gameImageView.backgroundColor = .white
+                self.imageActivityIndicator.stopAnimating()
+                self.imageActivityIndicator.isHidden = true
+            }
+        } else {
+            if let imageurl = game.imageURL {
+                GameController.shared.fetchImageFor(gameImageURL: imageurl) { (image) in
+                    if let image = image {
+                        DispatchQueue.main.async {
+                            game.gameImage = image
+                            self.gameImageView.image = image
+                            self.gameImageView.backgroundColor = .white
+                            self.imageActivityIndicator.stopAnimating()
+                            self.imageActivityIndicator.isHidden = true
+                        }
                     }
                 }
             }

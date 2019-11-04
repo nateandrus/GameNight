@@ -12,6 +12,8 @@ class GameController {
     
     static let shared = GameController()
     
+    var imageCache = NSCache<NSString, UIImage>()
+    
     var mostPopularGames: [TopLevelDictionary.Game] = []
         
     let myClientID = "E6Fps1aHC7"
@@ -79,21 +81,26 @@ class GameController {
     
     func fetchImageFor(gameImageURL: String, completion: @escaping (UIImage?) -> Void) {
         guard let url = URL(string: gameImageURL) else { completion(nil); return }
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                completion(nil)
-                return
-            }
-            guard let data = data else { completion(nil); return }
-            guard let gameImage = UIImage(data: data) else { completion(nil); return }
-            completion(gameImage)
-            
-        }.resume()
+        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
+            completion(cachedImage)
+        } else {
+            URLSession.shared.dataTask(with: url) { (data, _, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completion(nil)
+                    return
+                }
+                guard let data = data else { completion(nil); return }
+                guard let gameImage = UIImage(data: data) else { completion(nil); return }
+                self.imageCache.setObject(gameImage, forKey: url.absoluteString as NSString)
+                completion(gameImage)
+                
+            }.resume()
+        }
     }
     
     func createNewDescription(_ oldDescription: String) -> String {
-        let returnString = oldDescription.replacingOccurrences(of: "<i>", with: "").replacingOccurrences(of: "</i>", with: "").replacingOccurrences(of: "<br />", with: "").replacingOccurrences(of: "<em>", with: "").replacingOccurrences(of: "</em>", with: "").replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: "").replacingOccurrences(of: "<strong>", with: "").replacingOccurrences(of: "</strong>", with: "").replacingOccurrences(of: "<ul>", with: "").replacingOccurrences(of: "<li>", with: "").replacingOccurrences(of: "</li>", with: "").replacingOccurrences(of: "</ul>", with: "")
+        let returnString = oldDescription.replacingOccurrences(of: "<i>", with: "").replacingOccurrences(of: "</i>", with: "").replacingOccurrences(of: "<br />", with: "").replacingOccurrences(of: "<em>", with: "").replacingOccurrences(of: "</em>", with: "").replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: "").replacingOccurrences(of: "<strong>", with: "").replacingOccurrences(of: "</strong>", with: "").replacingOccurrences(of: "<ul>", with: "").replacingOccurrences(of: "<li>", with: "").replacingOccurrences(of: "</li>", with: "").replacingOccurrences(of: "</ul>", with: "").replacingOccurrences(of: "&quot;", with: "").replacingOccurrences(of: "<td>", with: "").replacingOccurrences(of: "</td>", with: "").replacingOccurrences(of: "<tr>", with: "").replacingOccurrences(of: "</tr>", with: "").replacingOccurrences(of: "<table>", with: "").replacingOccurrences(of: "<tbody>", with: "").replacingOccurrences(of: "</table>", with: "").replacingOccurrences(of: "</tbody>", with: "").replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
         return returnString
     }
 }
