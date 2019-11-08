@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6qe-4K-TGo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6qe-4K-TGo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -222,7 +222,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="nathanpandrus@gmail.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQR-73-GCE">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQR-73-GCE">
                                         <rect key="frame" x="0.0" y="30.5" width="314" height="34"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -233,7 +233,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jjjjjj" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dvj-Tb-yih">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dvj-Tb-yih">
                                         <rect key="frame" x="0.0" y="105" width="314" height="34"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -267,6 +267,14 @@
                                 <color key="textColor" red="0.0" green="0.45076909170000001" blue="0.86040609140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzy-HP-usx">
+                                <rect key="frame" x="50" y="584" width="80" height="28"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="14"/>
+                                <state key="normal" title="Privacy Policy"/>
+                                <connections>
+                                    <segue destination="RpP-O2-leq" kind="show" id="j5I-4B-6HV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -274,13 +282,16 @@
                             <constraint firstItem="ShF-hy-q70" firstAttribute="centerY" secondItem="aoR-np-7t3" secondAttribute="centerY" id="ClH-Dw-yzP"/>
                             <constraint firstItem="ShF-hy-q70" firstAttribute="centerX" secondItem="aoR-np-7t3" secondAttribute="centerX" id="Cme-MO-1xL"/>
                             <constraint firstItem="ShF-hy-q70" firstAttribute="top" secondItem="4oe-YP-QAV" secondAttribute="bottom" constant="37.5" id="Laa-NH-jDA"/>
+                            <constraint firstItem="asE-sc-uqV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kzy-HP-usx" secondAttribute="trailing" symbolic="YES" id="W1n-OS-UKp"/>
                             <constraint firstItem="BDt-nG-fdQ" firstAttribute="centerX" secondItem="aoR-np-7t3" secondAttribute="centerX" id="Xnk-Gd-FTs"/>
                             <constraint firstItem="HDh-th-ILy" firstAttribute="trailing" secondItem="ShF-hy-q70" secondAttribute="trailing" id="Z90-d6-LWL"/>
                             <constraint firstItem="BDt-nG-fdQ" firstAttribute="height" secondItem="asE-sc-uqV" secondAttribute="height" multiplier="0.12" id="dBN-jA-D4K"/>
                             <constraint firstItem="ShF-hy-q70" firstAttribute="leading" secondItem="asE-sc-uqV" secondAttribute="leading" constant="50" id="l2Y-sO-H9s"/>
+                            <constraint firstItem="Kzy-HP-usx" firstAttribute="leading" secondItem="HDh-th-ILy" secondAttribute="leading" id="nAz-er-aMX"/>
                             <constraint firstItem="4oe-YP-QAV" firstAttribute="top" secondItem="BDt-nG-fdQ" secondAttribute="bottom" constant="48" id="tHZ-v5-ofz"/>
                             <constraint firstItem="4oe-YP-QAV" firstAttribute="trailing" secondItem="ShF-hy-q70" secondAttribute="trailing" id="tP2-12-d02"/>
                             <constraint firstItem="asE-sc-uqV" firstAttribute="trailing" secondItem="ShF-hy-q70" secondAttribute="trailing" constant="50" id="tXg-Jp-s9R"/>
+                            <constraint firstItem="Kzy-HP-usx" firstAttribute="top" secondItem="HDh-th-ILy" secondAttribute="bottom" constant="8" id="uIF-8u-Mwv"/>
                             <constraint firstItem="4oe-YP-QAV" firstAttribute="leading" secondItem="ShF-hy-q70" secondAttribute="leading" id="uqx-hr-qc1"/>
                             <constraint firstItem="HDh-th-ILy" firstAttribute="leading" secondItem="ShF-hy-q70" secondAttribute="leading" id="vE3-y7-yES"/>
                         </constraints>
@@ -297,6 +308,134 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgb-5Q-2zp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2957.971014492754" y="-87.053571428571431"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CLv-Yt-ec1">
+            <objects>
+                <viewController id="RpP-O2-leq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Llc-Xy-DU5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6g-0T-5W2">
+                                <rect key="frame" x="144.5" y="16" width="125" height="26"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.45076909170000001" blue="0.86040609140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCP-Hi-djO">
+                                <rect key="frame" x="8" y="50" width="398" height="750"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Effective date: November 05, 2019
+
+Game Night ("us", "we", or "our") operates the Game Night mobile application (the "Service").
+
+This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. Our Privacy Policy for Game Night is created with the help of the Free Privacy Policy Generator.
+
+We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
+
+Information Collection And Use
+We collect several different types of information for various purposes to provide and improve our Service to you.
+
+Types of Data Collected
+Personal Data
+While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:
+
+Email address
+Cookies and Usage Data
+Usage Data
+When you access the Service by or through a mobile device, we may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile device unique ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browser you use, unique device identifiers and other diagnostic data ("Usage Data").
+
+Tracking &amp; Cookies Data
+We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.
+
+Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze our Service.
+
+You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
+
+Examples of Cookies we use:
+
+Session Cookies. We use Session Cookies to operate our Service.
+Preference Cookies. We use Preference Cookies to remember your preferences and various settings.
+Security Cookies. We use Security Cookies for security purposes.
+Use of Data
+Game Night uses the collected data for various purposes:
+
+To provide and maintain the Service
+To notify you about changes to our Service
+To allow you to participate in interactive features of our Service when you choose to do so
+To provide customer care and support
+To provide analysis or valuable information so that we can improve the Service
+To monitor the usage of the Service
+To detect, prevent and address technical issues
+Transfer Of Data
+Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.
+
+If you are located outside United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.
+
+Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+
+Game Night will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
+
+Disclosure Of Data
+Legal Requirements
+Game Night may disclose your Personal Data in the good faith belief that such action is necessary to:
+
+To comply with a legal obligation
+To protect and defend the rights or property of Game Night
+To prevent or investigate possible wrongdoing in connection with the Service
+To protect the personal safety of users of the Service or the public
+To protect against legal liability
+Security Of Data
+The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
+
+Service Providers
+We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.
+
+These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+
+Links To Other Sites
+Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.
+
+We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+
+Children's Privacy
+Our Service does not address anyone under the age of 18 ("Children").
+
+We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.
+
+Changes To This Privacy Policy
+We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+
+We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "effective date" at the top of this Privacy Policy.
+
+You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+
+Contact Us
+If you have any questions about this Privacy Policy, please contact us:
+
+By email: nightgame238@gmail.com</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="I4X-Dd-iLf" firstAttribute="trailing" secondItem="wCP-Hi-djO" secondAttribute="trailing" constant="8" id="0i9-Dz-Z39"/>
+                            <constraint firstItem="wCP-Hi-djO" firstAttribute="leading" secondItem="I4X-Dd-iLf" secondAttribute="leading" constant="8" id="Lcd-G4-2Lq"/>
+                            <constraint firstItem="I4X-Dd-iLf" firstAttribute="bottom" secondItem="wCP-Hi-djO" secondAttribute="bottom" constant="8" id="Q9Y-qz-gfw"/>
+                            <constraint firstItem="H6g-0T-5W2" firstAttribute="centerX" secondItem="Llc-Xy-DU5" secondAttribute="centerX" id="R39-PW-UAi"/>
+                            <constraint firstItem="H6g-0T-5W2" firstAttribute="top" secondItem="I4X-Dd-iLf" secondAttribute="top" constant="16" id="eAz-mu-aJI"/>
+                            <constraint firstItem="wCP-Hi-djO" firstAttribute="top" secondItem="H6g-0T-5W2" secondAttribute="bottom" constant="8" id="ki7-u2-8iw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I4X-Dd-iLf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1KP-kB-Prj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbg-FZ-lFE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2959.4202898550725" y="606.69642857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cKv-XI-7wG">
@@ -441,8 +580,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BQW-Z0-zAr">
-                                <rect key="frame" x="32" y="344" width="350" height="410"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BQW-Z0-zAr">
+                                <rect key="frame" x="32" y="344" width="350" height="360"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aW7-uh-Lff">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
@@ -464,19 +603,20 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eck-Fs-RIp">
-                                        <rect key="frame" x="0.0" y="60" width="350" height="350"/>
+                                        <rect key="frame" x="25" y="60" width="300" height="300"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="eck-Fs-RIp" secondAttribute="height" multiplier="1:1" id="B9W-Ar-Des"/>
+                                            <constraint firstAttribute="width" constant="300" id="PEw-QM-TEj"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="mBC-3L-fbg">
-                                <rect key="frame" x="32" y="758" width="350" height="31"/>
+                                <rect key="frame" x="57" y="758" width="300" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0L-pM-598">
-                                        <rect key="frame" x="0.0" y="0.0" width="163" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="31"/>
                                         <color key="backgroundColor" red="0.0" green="0.45076909170000001" blue="0.86040609140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <state key="normal" title="Choose Random">
@@ -487,7 +627,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBC-qJ-49f">
-                                        <rect key="frame" x="187" y="0.0" width="163" height="31"/>
+                                        <rect key="frame" x="162" y="0.0" width="138" height="31"/>
                                         <color key="backgroundColor" red="0.0" green="0.45076909170000001" blue="0.86040609140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <state key="normal" title="See list of games">
@@ -500,7 +640,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkw-Rg-y1x">
-                                <rect key="frame" x="170.5" y="489.5" width="73.5" height="179.5"/>
+                                <rect key="frame" x="170.5" y="464.5" width="73.5" height="179.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="150"/>
                                 <color key="textColor" red="0.0" green="0.45076909170000001" blue="0.86040609140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -666,10 +806,20 @@
                                     <color key="backgroundColor" red="0.92235751779999997" green="0.92235751779999997" blue="0.92235751779999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="tAL-Mc-Epu" secondAttribute="height" multiplier="1:1" id="FtJ-Cz-isX"/>
+                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="414" id="iIR-oq-Ohx"/>
                                     </constraints>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jse-Ep-MNW">
+                                    <rect key="frame" x="192" y="42" width="30" height="414"/>
+                                    <connections>
+                                        <action selector="topGameButtonTapped:" destination="yhH-Ku-ciq" eventType="touchUpInside" id="1Fb-LP-Kul"/>
+                                    </connections>
+                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other trending games:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTt-u7-RYK">
                                     <rect key="frame" x="16" y="472" width="382" height="26"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="26" id="h7g-vL-4yO"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
                                     <color key="textColor" red="0.0" green="0.45076909170000001" blue="0.86040609140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -681,30 +831,24 @@
                                         <constraint firstAttribute="height" constant="40" id="Se4-EC-2Mh"/>
                                     </constraints>
                                 </activityIndicatorView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jse-Ep-MNW">
-                                    <rect key="frame" x="0.0" y="42" width="414" height="414"/>
-                                    <connections>
-                                        <action selector="topGameButtonTapped:" destination="yhH-Ku-ciq" eventType="touchUpInside" id="1Fb-LP-Kul"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="yTg-eY-z2O" firstAttribute="leading" secondItem="5NA-6B-dKB" secondAttribute="leading" constant="16" id="3bZ-AW-KqZ"/>
-                                <constraint firstItem="jse-Ep-MNW" firstAttribute="top" secondItem="tAL-Mc-Epu" secondAttribute="top" id="4El-Fq-54u"/>
+                                <constraint firstItem="jse-Ep-MNW" firstAttribute="centerX" secondItem="tAL-Mc-Epu" secondAttribute="centerX" id="4bt-vK-4eo"/>
                                 <constraint firstAttribute="trailing" secondItem="yTg-eY-z2O" secondAttribute="trailing" constant="16" id="5Qd-MZ-nKR"/>
                                 <constraint firstItem="lTt-u7-RYK" firstAttribute="top" secondItem="tAL-Mc-Epu" secondAttribute="bottom" constant="16" id="6Q6-Ai-VHs"/>
-                                <constraint firstItem="jse-Ep-MNW" firstAttribute="trailing" secondItem="tAL-Mc-Epu" secondAttribute="trailing" id="6nv-Nb-Zj4"/>
+                                <constraint firstItem="jse-Ep-MNW" firstAttribute="width" secondItem="tAL-Mc-Epu" secondAttribute="width" multiplier="0.0724638" id="7Zb-gz-5NP"/>
                                 <constraint firstItem="yTg-eY-z2O" firstAttribute="top" secondItem="5NA-6B-dKB" secondAttribute="top" constant="8" id="9Af-3z-sb1"/>
                                 <constraint firstItem="lTt-u7-RYK" firstAttribute="leading" secondItem="5NA-6B-dKB" secondAttribute="leading" constant="16" id="H7c-3f-NDN"/>
+                                <constraint firstItem="G9i-tG-GEa" firstAttribute="centerX" secondItem="tAL-Mc-Epu" secondAttribute="centerX" id="ND0-5h-OxT"/>
+                                <constraint firstItem="G9i-tG-GEa" firstAttribute="centerX" secondItem="5NA-6B-dKB" secondAttribute="centerX" id="Nzf-Bv-BZn"/>
                                 <constraint firstItem="G9i-tG-GEa" firstAttribute="centerY" secondItem="tAL-Mc-Epu" secondAttribute="centerY" id="P3W-cc-FxB"/>
-                                <constraint firstItem="tAL-Mc-Epu" firstAttribute="leading" secondItem="5NA-6B-dKB" secondAttribute="leading" id="Tcp-XX-V1F"/>
-                                <constraint firstAttribute="trailing" secondItem="tAL-Mc-Epu" secondAttribute="trailing" id="VIf-vG-4eC"/>
-                                <constraint firstItem="tAL-Mc-Epu" firstAttribute="top" secondItem="yTg-eY-z2O" secondAttribute="bottom" constant="8" id="bS7-ye-wOU"/>
-                                <constraint firstItem="G9i-tG-GEa" firstAttribute="centerX" secondItem="tAL-Mc-Epu" secondAttribute="centerX" id="cfo-Jm-Ma6"/>
-                                <constraint firstItem="jse-Ep-MNW" firstAttribute="leading" secondItem="tAL-Mc-Epu" secondAttribute="leading" id="g2q-ZP-0J5"/>
+                                <constraint firstItem="tAL-Mc-Epu" firstAttribute="width" secondItem="5NA-6B-dKB" secondAttribute="width" priority="750" id="UnA-nJ-viS"/>
+                                <constraint firstItem="jse-Ep-MNW" firstAttribute="height" secondItem="tAL-Mc-Epu" secondAttribute="height" id="W0L-0p-U1s"/>
                                 <constraint firstAttribute="trailing" secondItem="lTt-u7-RYK" secondAttribute="trailing" constant="16" id="jCt-hF-0OY"/>
-                                <constraint firstItem="jse-Ep-MNW" firstAttribute="bottom" secondItem="tAL-Mc-Epu" secondAttribute="bottom" id="wdd-Eq-4Xs"/>
+                                <constraint firstItem="jse-Ep-MNW" firstAttribute="centerY" secondItem="tAL-Mc-Epu" secondAttribute="centerY" id="rfK-Bz-M8n"/>
+                                <constraint firstItem="tAL-Mc-Epu" firstAttribute="top" secondItem="yTg-eY-z2O" secondAttribute="bottom" constant="8" id="zas-Ds-6Yk"/>
                             </constraints>
                         </view>
                         <prototypes>
